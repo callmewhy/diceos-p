@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'diceos',
-      script: 'nuxt start',
+      script: './node_modules/nuxt/bin/nuxt-start',
       log_date_format: 'YYYY-MM-DD HH:mm:ss',
       env: {
         PORT: 3333,

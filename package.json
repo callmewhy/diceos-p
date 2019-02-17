@@ -16,7 +16,7 @@
     "nuxt": {
       "host": "0.0.0.0",
       "port": "3333"
-    }  
+    }
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^0.1.1",

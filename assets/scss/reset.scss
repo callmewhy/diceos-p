@@ -12,33 +12,32 @@ html, body {
   font-family: 'Roboto-Regular', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-a
-{
+a {
   color: $color-text;
   text-decoration: none;
 }
 
-.lnr
-{
+.lnr {
   line-height: inherit;
 }
 
-input, button, textarea
-{
+input, button, textarea {
   font-family: inherit;
 }
+
 input, textarea {
-  -webkit-user-select:text;
+  -webkit-user-select: text;
 }
-h1, h2, h3, h4, h5, h6
-{
+
+h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+
 pre {
   margin: 20px 0;
   padding: 10px 0;
   font-size: 14px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   font-family: 'Roboto-Mono-Regular', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
 }

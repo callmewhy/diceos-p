@@ -1,5 +1,5 @@
 <template>
-  <h1 class="logo" :class="pos">
+  <h1 :class="pos" class="logo">
     <nuxt-link to="/"><span class="logo-icon"></span><span class="logo-text">{{$t('seo.title')}}</span></nuxt-link>
   </h1>
 </template>
@@ -7,8 +7,8 @@
 <script>
 export default {
   props: {
-    pos: ''
-  }
+    pos: '',
+  },
 }
 </script>
 
@@ -19,6 +19,7 @@ export default {
     display: flex;
     align-items: center;
   }
+
   .logo-text {
     font-size: 1px;
     text-indent: -10000em;
@@ -30,6 +31,7 @@ export default {
     width: 130px;
     height: 60px;
   }
+
   .logo-icon {
     display: block;
     width: 32px;
@@ -39,6 +41,7 @@ export default {
     background-size: contain;
   }
 }
+
 .logo.center {
   a {
     background-position-x: 0;

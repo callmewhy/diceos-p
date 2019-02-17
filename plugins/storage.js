@@ -1,9 +1,8 @@
-
 import createPersistedState from 'vuex-persistedstate'
 
-export default ({store}) => {
+export default ({ store }) => {
   createPersistedState({
-      key: '',
-      paths: []
+    key: '',
+    paths: [],
   })(store)
 }

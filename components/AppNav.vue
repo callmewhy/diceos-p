@@ -3,59 +3,61 @@
     <div class="nav-top">
       <AppLogo />
       <div class="space"></div>
-      <div class="nav-menu-trigger" :class="isOpen ? 'open' : ''" @click="triggerMenu">
+      <div :class="isOpen ? 'open' : ''" @click="triggerMenu" class="nav-menu-trigger">
         <span class="line line-1"></span>
         <span class="line line-2"></span>
         <span class="line line-3"></span>
       </div>
     </div>
-    <div class="nav-menu" :class="isOpen ? 'open' : ''">
+    <div :class="isOpen ? 'open' : ''" class="nav-menu">
       <div class="nav-menu-inner">
-        <nuxt-link class="nav-menu-item" :class="'item-' + item.name + ' ' + activeNavCls(item.name)" 
-          :key="item.name" v-for="item in menuItems"
-          :title="item.label" :to="'/' + $i18n.locale + item.url">{{item.label}}</nuxt-link>
-        <button class="button alt" v-show="isLogin" @click="onProfile">{{$store.state.profile.name}}</button>
-        <button class="button alt login-button" v-show="!isLogin" @click="onLogin">{{$t('common.login')}}</button>
-        <button class="button" v-show="!isLogin" @click="onSignup">{{$t('common.signup')}}</button>
+        <nuxt-link :class="'item-' + item.name + ' ' + activeNavCls(item.name)" :key="item.name"
+                   :title="item.label" :to="'/' + $i18n.locale + item.url"
+                   class="nav-menu-item" v-for="item in menuItems">{{item.label}}
+        </nuxt-link>
+        <button @click="onProfile" class="button alt" v-show="isLogin">{{$store.state.profile.name}}</button>
+        <button @click="onLogin" class="button alt login-button" v-show="!isLogin">{{$t('common.login')}}</button>
+        <button @click="onSignup" class="button" v-show="!isLogin">{{$t('common.signup')}}</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo"
+import AppLogo from '~/components/AppLogo'
+
 export default {
   components: {
-    AppLogo
+    AppLogo,
   },
   data: function () {
     return {
-      isOpen: false
+      isOpen: false,
     }
   },
   computed: {
-    isLogin () {
+    isLogin() {
       return this.$store.state.profile && this.$store.state.profile.token
     },
-    username () {
+    username() {
       if (!this.isLogin) {
         return ''
       }
       return this.$store.state.profile.name
     },
-    menuItems () {
+    menuItems() {
       let items = [
-        { name: 'log', label: 'LOGS', url: '/logs'},
-        { name: 'fair', label: 'FAIR', url: '/fairness'}
+        { name: 'log', label: 'LOGS', url: '/logs' },
+        { name: 'fair', label: 'FAIR', url: '/fairness' },
       ]
       return items
-    }
+    },
   },
   methods: {
     triggerMenu() {
       this.isOpen = !this.isOpen
-    },    
-    isActive (name) {
+    },
+    isActive(name) {
       let curPath = this.$nuxt.$route.path
       let path = curPath.split('/').filter((x) => {
         return x !== 'index.html'
@@ -67,19 +69,19 @@ export default {
       }
       return false
     },
-    activeNavCls (name) {
+    activeNavCls(name) {
       return this.isActive(name) ? 'active' : ''
     },
-    onProfile () {
+    onProfile() {
       this.$router.push(`/${this.$i18n.locale}/profile`)
     },
-    onSignup () {
+    onSignup() {
       this.$router.push(`/${this.$i18n.locale}/signup`)
     },
-    onLogin () {
+    onLogin() {
       this.$router.push(`/${this.$i18n.locale}/login`)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -98,6 +100,7 @@ export default {
     max-width: 960px;
   }
 }
+
 .nav-top {
   display: flex;
   min-height: 60px;
@@ -105,8 +108,8 @@ export default {
   align-items: center;
   width: 100%;
 }
-.nav-menu-trigger
-{
+
+.nav-menu-trigger {
   display: none;
   height: 40px;
   width: 40px;
@@ -115,8 +118,8 @@ export default {
   position: relative;
   margin-right: -8px;
 }
-.nav-menu-trigger > .line
-{
+
+.nav-menu-trigger > .line {
   position: absolute;
   width: 22px;
   height: 2px;
@@ -127,34 +130,40 @@ export default {
   transform-origin: 10px;
   content: "";
 }
-.nav-menu-trigger > .line-2
-{
+
+.nav-menu-trigger > .line-2 {
   top: 18px;
 }
-.nav-menu-trigger > .line-3
-{
+
+.nav-menu-trigger > .line-3 {
   top: 24px;
 }
+
 .space {
   flex: 1;
 }
+
 .nav-menu {
   display: flex;
   justify-self: flex-end;
   flex-direction: row;
 }
+
 .nav-menu-inner {
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
+
 .nav-menu-item.active {
   opacity: 1;
+
   .link {
     color: #3377E8;
   }
 }
+
 .nav-menu-item {
   display: flex;
   flex-direction: row;
@@ -162,6 +171,7 @@ export default {
   margin-right: 40px;
   align-items: center;
   height: 40px;
+
   .link {
     text-decoration: none;
     display: flex;
@@ -169,56 +179,50 @@ export default {
     color: white;
   }
 }
+
 .login-button {
   margin-right: 20px;
 }
 
-@media (max-width: 736px)
-{
+@media (max-width: 736px) {
   .nav-bar {
     flex-direction: column;
   }
-  .nav-menu-trigger
-  {
+  .nav-menu-trigger {
     display: flex;
   }
-  .nav-menu-trigger > .line
-  {
+  .nav-menu-trigger > .line {
     transition: transform 0.2s ease;
   }
-  .nav-menu-trigger.open > .line-1
-  {
+  .nav-menu-trigger.open > .line-1 {
     transform: rotateZ(45deg) translateY(3px) translateX(1px);
   }
-  .nav-menu-trigger.open > .line-2
-  {
+  .nav-menu-trigger.open > .line-2 {
     transform: rotateZ(-45deg) translateY(-2px);
   }
-  .nav-menu-trigger.open > .line-3
-  {
+  .nav-menu-trigger.open > .line-3 {
     transform: rotateZ(-45deg) translateX(4px) translateY(-6px);
   }
-  .nav-menu
-  {
+  .nav-menu {
     flex-direction: column;
     width: 100%;
-    .nav-menu-inner
-    {
+
+    .nav-menu-inner {
       overflow: hidden;
       height: 0;
       flex-direction: column;
       transition: all 0.2s ease;
+
       button {
         margin: 2px 10px 20px 10px;
       }
     }
   }
-  .nav-menu.open
-  {
+  .nav-menu.open {
     padding: 5px 0 10px 0;
-    .nav-menu-inner
-    {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    .nav-menu-inner {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       height: auto;
     }
   }

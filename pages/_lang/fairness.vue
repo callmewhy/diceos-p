@@ -2,7 +2,7 @@
   <div class="content">
     <app-nav></app-nav>
     <div class="article form">
-      <h1 >Fairness</h1>
+      <h1>Fairness</h1>
       <p>DICEOS uses a provably fair cryptographic system which means you don’t need to trust us blindly, each roll is cryptographically fair and can be easily verified.</p>
       <h2 class="form-title">Randomization</h2>
       <p>DICEOS uses the snapshot Id of the Mixin Network's transaction to generate bet result.</p>
@@ -22,9 +22,11 @@
     }</pre>
       <p>Please also check our verifier:</p>
       <div class="verifier">
-        <div class="entry"><label class="entry-label">Snapshot ID</label><input class="entry-input ta-right" v-model="snapshotId"/></div>
-        <div class="entry"><label class="entry-label">Result</label><input class="entry-input ta-right" v-model="result" readonly/></div>
-        <div class="button-wrapper"><button class="button" @click="verifySample">Verify</button></div>
+        <div class="entry"><label class="entry-label">Snapshot ID</label><input class="entry-input ta-right" v-model="snapshotId" /></div>
+        <div class="entry"><label class="entry-label">Result</label><input class="entry-input ta-right" readonly v-model="result" /></div>
+        <div class="button-wrapper">
+          <button @click="verifySample" class="button">Verify</button>
+        </div>
       </div>
     </div>
   </div>
@@ -38,72 +40,80 @@ import _ from 'lodash'
 
 export default {
   components: {
-    AppNav
+    AppNav,
   },
   mixins: [APIHelper],
-  data () {
+  data() {
     return {
       result: '',
-      snapshotId: ''
+      snapshotId: '',
     }
   },
-  mounted () {
+  mounted() {
     this.verify('aaa')
   },
   methods: {
-    verifySample () {
+    verifySample() {
       let result = this.verify(this.snapshotId)
       this.result = result
     },
-    verify (msg) {
+    verify(msg) {
       let digits = sha512.array(msg)
       let s = _.sum(digits)
       return s % 100 + 1
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped lang="scss">
-  @import '~/assets/scss/variables.scss';
-  .article {
-    line-height: 1.3;
-    h1 {
-      font-size: 38px;
-      font-weight: bold;
-    }
-    p {
-      font-size: 14px;
-      margin: 0.8em 0;
-    }
-    h2 {
-      margin: 20px 0 0px 0;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .sample-result-sqr.win {
-      color: #fff;
-      padding: 1px 4px;
-      opacity: 1;
-      border-radius: 3px;
-      background: $color-success;
-    }
-    .sample-result-sqr.lose {
-      color: #fff;
-      padding: 1px 4px;
-      opacity: 1;
-      border-radius: 3px;
-      background: #555;
-    }
+@import '~/assets/scss/variables.scss';
+
+.article {
+  line-height: 1.3;
+
+  h1 {
+    font-size: 38px;
+    font-weight: bold;
   }
-  .form {
-    padding: 10px 20px;
-    margin: 0 auto;
+
+  p {
+    font-size: 14px;
+    margin: 0.8em 0;
   }
-  .verifier {
-    .button-wrapper {
-      text-align: center;
-    }
+
+  h2 {
+    margin: 20px 0 0px 0;
+    font-size: 20px;
+    font-weight: bold;
   }
+
+  .sample-result-sqr.win {
+    color: #fff;
+    padding: 1px 4px;
+    opacity: 1;
+    border-radius: 3px;
+    background: $color-success;
+  }
+
+  .sample-result-sqr.lose {
+    color: #fff;
+    padding: 1px 4px;
+    opacity: 1;
+    border-radius: 3px;
+    background: #555;
+  }
+}
+
+.form {
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.verifier {
+  .button-wrapper {
+    text-align: center;
+  }
+}
 </style>
 

@@ -1,11 +1,10 @@
-
 export const state = () => ({
   locales: ['en', 'zh'],
   locale: 'en',
   profile: {},
-  defaultAsset: {}
+  defaultAsset: {},
 })
-  
+
 export const mutations = {
   SET_LANG(state, locale) {
     if (state.locales.indexOf(locale) !== -1) {
@@ -20,5 +19,5 @@ export const mutations = {
   },
   SET_DEFAULT_ASSET(state, defaultAsset) {
     state.defaultAsset = defaultAsset
-  }
+  },
 }

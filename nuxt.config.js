@@ -1,5 +1,5 @@
 let globalFeaturedImage = 'https://diceos.com/diceos-512.png'
-let baseRoutes = [
+const routes = [
   '/', '/zh', '/en',
   '/zh/dice',
   '/zh/profile', '/zh/signup', '/zh/login',
@@ -10,7 +10,7 @@ let baseRoutes = [
   '/en/profile', '/en/signup', '/en/login',
   '/en/asset',
   '/en/logs',
-  '/en/fairness', '/en/maintenance'
+  '/en/fairness', '/en/maintenance',
 ]
 module.exports = {
   sitemap: {
@@ -18,7 +18,7 @@ module.exports = {
     hostname: 'https://diceos.com',
     cacheTime: 1000 * 60 * 15,
     generate: true,
-    routes: baseRoutes
+    routes: routes,
   },
   head: {
     title: 'DICEOS - Fast CLAM Dice Game - 2% House Edge - Roll the Dice!',
@@ -33,20 +33,20 @@ module.exports = {
       { hid: 'twitter-image', name: 'twitter:image', content: globalFeaturedImage },
       { hid: 'robots', name: 'robots', content: 'index,follow' },
       { hid: 'mobile-web-app-capable', name: 'mobile-web-app-capable', content: 'yes' },
-      { hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' }
+      { hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/diceos-64.png' },
-      { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/diceos-512.png' }
-    ]
+      { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/diceos-512.png' },
+    ],
   },
   css: [
-    '~/assets/scss/index.scss'
+    '~/assets/scss/index.scss',
   ],
   env: {
     maintenance: false,
     maintenanceEndTime: Date.now() + 1000 * 60 * 60,
-    apiBase: process.env.API_BASE || 'https://api.diceos.com/api'
+    apiBase: process.env.API_BASE || 'https://api.diceos.com/api',
   },
   plugins: [
     '~/plugins/i18n.js',
@@ -55,18 +55,14 @@ module.exports = {
     { src: '~/plugins/vue-tabs.js', ssr: false },
     { src: '~/plugins/vue-modal.js', ssr: false },
     { src: '~/plugins/vue-notification.js', ssr: false },
-    { src: '~/plugins/storage.js', ssr: false }
+    { src: '~/plugins/storage.js', ssr: false },
   ],
   router: {
-    middleware: ['i18n']
+    middleware: ['i18n'],
   },
   generate: {
-    routes: routes
+    routes: routes,
   },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
   /*
   ** Customize the progress bar color
   */
@@ -77,21 +73,21 @@ module.exports = {
   build: {
     vendor: [
       'axios',
-      'fingerprintjs2'
+      'fingerprintjs2',
     ],
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
-    }
-  }
+    },
+  },
 }
 

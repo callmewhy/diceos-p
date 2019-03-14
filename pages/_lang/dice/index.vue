@@ -2,7 +2,7 @@
   <div class="">
     <app-nav></app-nav>
     <template v-if="!isSigned">
-      <div @click="goSignup" class="notify-bannar pane">Sign up and roll to get DICEOS bonus »</div>
+      <div @click="goSignup" class="notify-bannar pane">Sign up and roll to get DICEXIN bonus »</div>
     </template>
     <div class="dice-container">
       <div class="game-table">
@@ -390,6 +390,10 @@ export default {
         return a.order > b.order ? 1 : -1
       })
       this.assets = assets.filter((x) => {
+        console.log(x)
+        if (x.name === 'Diceos') {
+          return false
+        }
         if (x.balance * HOUSE_EDGE < x.min) {
           return false
         }
@@ -805,7 +809,7 @@ export default {
     background-image: url(~/assets/images/coins/btc.png);
   }
 
-  .record-icon.DICEOS {
+  .record-icon.DICEXIN {
     background-image: url(~/assets/images/coins/diceos.png);
   }
 

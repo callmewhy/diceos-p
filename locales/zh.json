@@ -15,7 +15,7 @@
     "sign": {
       "username_placeholder": "用户名",
       "password_placeholder": "密码",
-      "login": "登录到 DICEOS",
+      "login": "登录到 DICEXIN",
       "signup": "注册",
       "create_free_account": "注册一个帐号",
       "already_registered": "登录已有帐号"
@@ -68,7 +68,7 @@
     }
   },
   "seo": {
-    "title": "DICEOS - 快速、公平的加密货币骰子游戏 - 多个数字货币支持 - 滚动你的骰子！",
+    "title": "DICEXIN - 快速、公平的加密货币骰子游戏 - 多个数字货币支持 - 滚动你的骰子！",
     "description": "一个快节奏的，可证明的，基于公平骰子的加密货币赌场。支持多种不同数字货币。实时的下注，实时返现!",
     "keywords": "公平，骰子游戏，数字货币，赌场游戏，多币种支持，实时下注"
   }

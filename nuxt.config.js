@@ -21,14 +21,14 @@ module.exports = {
     routes: routes,
   },
   head: {
-    title: 'DICEOS - Fast CLAM Dice Game - 2% House Edge - Roll the Dice!',
+    title: 'DICEXIN - Fast CLAM Dice Game - 2% House Edge - Roll the Dice!',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Diceos' },
+      { hid: 'description', name: 'description', content: 'Dicexin' },
       { hid: 'og-image', property: 'og:image', content: globalFeaturedImage },
       { hid: 'og-type', property: 'og:type', content: 'Website' },
-      { hid: 'og-site-name', property: 'og:site_name', content: 'DICEOS - A CLAM Dice Game' },
+      { hid: 'og-site-name', property: 'og:site_name', content: 'DICEXIN - A CLAM Dice Game' },
       { hid: 'twitter-card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter-image', name: 'twitter:image', content: globalFeaturedImage },
       { hid: 'robots', name: 'robots', content: 'index,follow' },

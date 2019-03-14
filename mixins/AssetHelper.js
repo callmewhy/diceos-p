@@ -19,7 +19,7 @@ const supportedCoins = {
     order: 25,
     icon: require('~/assets/images/coins/btc.png'),
   },
-  DICEOS: {
+  DICEXIN: {
     min: 0.01,
     order: 26,
     icon: require('~/assets/images/coins/diceos.png'),

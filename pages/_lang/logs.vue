@@ -4,8 +4,8 @@
     <div class="article form">
       <h1>Logs</h1>
       <h2 class="form-title">22 Nov, 2018</h2>
-      <p>Listed DICEOS.</p>
-      <p>Signed users will get some DICEOS TOKENs for each fast rolling (CNB and DICEOS excepted).</p>
+      <p>Listed DICEXIN.</p>
+      <p>Signed users will get some DICEXIN TOKENs for each fast rolling (CNB and DICEXIN excepted).</p>
       <h2 class="form-title">19 Nov, 2018</h2>
       <p>Listed BTC.</p>
       <h2 class="form-title">14 Nov, 2018</h2>

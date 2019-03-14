@@ -3,9 +3,9 @@
     <app-nav></app-nav>
     <div class="article form">
       <h1>Fairness</h1>
-      <p>DICEOS uses a provably fair cryptographic system which means you don’t need to trust us blindly, each roll is cryptographically fair and can be easily verified.</p>
+      <p>DICEXIN uses a provably fair cryptographic system which means you don’t need to trust us blindly, each roll is cryptographically fair and can be easily verified.</p>
       <h2 class="form-title">Randomization</h2>
-      <p>DICEOS uses the snapshot Id of the Mixin Network's transaction to generate bet result.</p>
+      <p>DICEXIN uses the snapshot Id of the Mixin Network's transaction to generate bet result.</p>
       <p>A snapshot Id is a standard UUID string, which is randomly generated. You can find it by tapping the result text (<span class="sample-result-sqr win">WIN</span> or <span class="sample-result-sqr lose">LOSE</span> button).</p>
       <h2 class="form-title">Verify</h2>
       <p>

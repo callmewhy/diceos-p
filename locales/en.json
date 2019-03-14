@@ -15,7 +15,7 @@
     "sign": {
       "username_placeholder": "Username",
       "password_placeholder": "Password",
-      "login": "Login to Diceos",
+      "login": "Login to Dicexin",
       "signup": "Sign up",
       "create_free_account": "Sign up",
       "already_registered": "Login"
@@ -68,7 +68,7 @@
     }
   },
   "seo": {
-    "title": "DICEOS - Fast CLAM Cryptocurrency Dice Game - Multiple coins/tokens support - Roll the Dice!",
+    "title": "DICEXIN - Fast CLAM Cryptocurrency Dice Game - Multiple coins/tokens support - Roll the Dice!",
     "description": "Fast paced provably fair dice-based CLAM Cryptocurrency casino. Multiple coins/tokens support. Invest in real time!",
     "keywords": "CLAM Dice Game, Fair, Multiple coins and token, real-time, Mixin"
   }

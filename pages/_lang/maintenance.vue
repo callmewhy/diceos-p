@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <AppLogo />
-    <h1>DICEOS is down for scheduled maintenance.</h1>
-    <div class="description">DICEOS will be back.</div>
+    <h1>DICEXIN is down for scheduled maintenance.</h1>
+    <div class="description">DICEXIN will be back.</div>
     <div class="count-down">{{count}}</div>
   </div>
 </template>

@@ -2,7 +2,7 @@
   "name": "diceos",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "Diceos <diceos@pxg.com>",
+  "author": "Dicexin <diceos@pxg.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",

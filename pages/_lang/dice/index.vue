@@ -344,7 +344,7 @@ export default {
       memo = msgpack.encode(memo)
       let url = this.createPayment({
         'symbol': this.currentAsset.symbol,
-        'recipient': '62aa50d4-91d7-4d85-9941-60350d230e88',
+        'recipient': '639fcaea-3f8c-4388-a26f-de2e8c860d8e',
         traceId: this.traceId,
         'amount': this.betValue,
         'memo': memo,
